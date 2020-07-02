@@ -15,9 +15,9 @@
     - You are able to leverage Delivery Optimization.
 
 ## Build the deployment package
-1. Download the script if you don't already from https://raw.githubusercontent.com/zchoate/Intune-Applications/master/Install-Msi.ps1. 
+1. Download the script if you don't already from https://raw.githubusercontent.com/zchoate/Intune-Applications/main/Install-Msi.ps1. 
 ```
-Invoke-RestMethod -Uri "https://raw.githubusercontent.com/zchoate/Intune-Applications/master/Install-Msi.ps1" -OutFile "$env:UserProfile\Downloads\Deployment\Install-Msi.ps1"
+Invoke-RestMethod -Uri "https://raw.githubusercontent.com/zchoate/Intune-Applications/main/Install-Msi.ps1" -OutFile "$env:UserProfile\Downloads\Deployment\Install-Msi.ps1"
 ```
 2. Download the Intune package tool and unzip: https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/archive/v1.8.1.zip. This can be saved to any accessible directory.
 3. If you're going with the PackagedInstaller option, download your installer and place in the same directory as the Install-Msi.ps1 script. This should only contain these 2 files.
