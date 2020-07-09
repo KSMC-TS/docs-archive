@@ -33,12 +33,17 @@ Invoke-RestMethod -Uri "https://raw.githubusercontent.com/zchoate/Intune-Applica
 
 ## Create the application deployment in Intune
 1. Pull up the Microsoft Endpoint Manager admin center: https://devicemanagement.microsoft.com.
-2. Select Apps on the left. </br> <img src="AppDeployment_2.png" alt="Endpoint Manager admin center, Apps">
-3. Select All Apps and then Add. </br> <img src="AppDeployment_3.png" alt="Endpoint Manager admin center, Apps, All Apps, Add">
-4. Select Windows app (Win32) as the App type. </br> <img src="AppDeployment_4.png" alt="Select app type, Windows app (Win32)">
-5. Click `Select the app package file` and navigate the deployment package created in the previous section. </br> <img src="AppDeployment_5.png" alt="Select app package file, Open, File Select, Open">
-6. Choose an appropriate name, description, publisher, category, etc. and move to the next step. </br> <img src="AppDeployment_6.png" alt="App information page: Name, Description, Publisher, Category, Show this as a featured app in the company portal, infomation url, privacy url">
-7. Input your install and uninstall commands in the following pattern:
+2. Select Apps on the left.  
+![Endpoint Manager admin center, Apps](AppDeployment_2.png)
+4. Select All Apps and then Add.
+![Endpoint Manager admin center, Apps, All Apps, Add](AppDeployment_3.png)
+5. Select Windows app (Win32) as the App type. 
+![Select app type, Windows app (Win32)](AppDeployment_4.png)
+6. Click `Select the app package file` and navigate the deployment package created in the previous section. 
+![Select app package file, Open, File Select, Open](AppDeployment_5.png)
+7. Choose an appropriate name, description, publisher, category, etc. and move to the next step. 
+![App information page: Name, Description, Publisher, Category, Show this as a featured app in the company portal, infomation url, privacy url](AppDeployment_6.png)
+8. Input your install and uninstall commands in the following pattern:
 ```
 # For the DownloadUrl option:
 Powershell.exe -ExecutionPolicy Bypass -File Install-Msi.ps1 -downloadUrl "https://website.com/path/to.msi"
@@ -47,7 +52,6 @@ Powershell.exe -ExecutionPolicy Bypass -File Install-Msi.ps1 -packagedInstaller 
 # To uninstall:
 Powershell.exe -ExecutionPolicy Bypass -File Install-Msi.ps1 -uninstall "name of application"
 ```
-<!--<img src="AppDeployment_7.png" alt="Specify commands to install and uninstall this app">-->
 8. Choose the appropriate requirements for your application.
 9. Choose the appropriate detection rules for the application. File is the quickest and most consistent mechanism in my experience. You can select multiple rules or even create a custom detection script.
 10. Choose any dependencies if required (these should already exist as separate deployment packages but dependencies don't need to be assigned to any groups).
